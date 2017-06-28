@@ -1,20 +1,79 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!!
+    {{title}}!!
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
+
+  <div>
+    <h3><i>Property Binding [Unsafe URL Bypass Dom Sanitizer - Browser Module]</i></h3>
+    <img width="50%" height="25px" [src]="imageSrc"/>
+    <img width="50%" height="25px" bind-src="imageSrc"/>
+    <hr>
+  </div>
+
+
+  <div>
+    <h3><i>Two Way Binding</i></h3>
+    <input type="text" [(ngModel)]="property"><br>
+    Result >> {{property}}
+    <hr>
+  </div>
+
+
+  <div>
+    <h3><i>List Repeater + Style Props </i></h3>
+    <p *ngFor="let list of listArray">
+      <span [style.color]="list.color">{{list.color|uppercase}}</span>
+    </p>
+    <p [ngStyle]="{color:inputValue}">
+      DYNAMIC COLOR: <input type="text" [(ngModel)]="inputValue" placeholder="Color Name">
+    </p>
+    <hr>
+  </div>
+
+
+  <div>
+    <h3><i>Structural Directive [*ngIf (then,else), ngSwitch,..]</i></h3>
+    <div *ngIf="showMainContent;then availTemplate else unavailTemplate"></div>
+    <ng-template #availTemplate>Content Available Template</ng-template>
+    <ng-template #unavailTemplate>Content Unavailable Template</ng-template>
+    <br><br>
+    <button (click)="showMainContent=!showMainContent">NgIf Toggler</button>
+
+    <div [ngSwitch]="switchCaseVal.active">
+      <p *ngSwitchCase="'red'">ngSwitch - Red - Active</p>
+      <p *ngSwitchCase="'green'">ngSwitch - Green - Active</p>
+      <p *ngSwitchCase="'blue'">ngSwitch - Blue - Active</p>
+      <p *ngSwitchCase="'cyan'">ngSwitch - Cyan - Active</p>
+      <p *ngSwitchCase="'magenta'">ngSwitch - Magenta - Active</p>
+    </div>
+    <button (click)="switchCaseVal.active='cyan'">Switch Cyan</button>
+    <button (click)="switchCaseVal.active='green'">Switch Green</button>
+    <hr>
+  </div>
+
+
+  <div>
+    <h3><i>Passing Component function declaration into Attribute Directive => Console</i></h3>
+    <button [appDirective]="passComponentClickHandler">Component <-> Attribute Directive</button>
+
+    <h3><i>Binding Second Property [Static] => Console</i></h3>
+    <button [appDirective]="passComponentClickHandler" secondProperty="__value__">Static Content</button>
+
+    <h3><i>Binding Second Property [Dynamic]</i></h3>
+    <p *ngFor="let list of listArray">
+      <button [appDirective]="passComponentClickHandler" [secondProperty]="list">
+        Dynamic Content [{{list.color}}]
+      </button>
+    </p>
+
+    <h3><i>@HostBinding [Default Attribute Setup - cust_bool_prop] => Console</i></h3>
+    <button [appDirective]="passComponentClickHandler" secondProperty="__value__" >Static Content</button>
+
+    <hr>
+  </div>
+
+
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+
 
