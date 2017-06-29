@@ -1,8 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { AppComponent } from './app.component';
-import { AppDirective } from './app.directive';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule}   from '@angular/forms';
+import {AppComponent} from './app.component';
+import {AppDirective} from './app.directive';
+import {ApiService} from './api.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -10,10 +12,12 @@ import { AppDirective } from './app.directive';
     AppDirective
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

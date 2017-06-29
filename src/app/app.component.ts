@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 
 export class AppComponent {
-
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer,
+              private apiServiceRef: ApiService) {
   }
 
   title = "Angular-4"
@@ -28,13 +29,20 @@ export class AppComponent {
 
   /* Structural Directive */
   showMainContent = true;
-  switchCaseVal = {active:"magenta"};
+  switchCaseVal = {active: "magenta"};
 
-  passComponentClickHandler(){
+  passComponentClickHandler() {
     console.log(`Component Fn Init.`);
   }
 
   passComponentAttrList = this.listArray;
+
+  fetchList(){
+   this.apiServiceRef.fetchSampleList().subscribe((x)=>{
+     console.log(x);
+   })
+   // alert("fetch")
+  }
 
 
 }
