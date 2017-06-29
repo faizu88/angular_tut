@@ -6,6 +6,7 @@ import {AppDirective} from './app.directive';
 import {ApiService} from './api.service';
 import {HttpModule} from '@angular/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,

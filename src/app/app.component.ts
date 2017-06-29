@@ -37,8 +37,8 @@ export class AppComponent {
 
   passComponentAttrList = this.listArray;
 
-  fetchList(){
-   this.apiServiceRef.fetchSampleList().subscribe((x)=>{
+  fetchListBtnOnClick(){
+   this.apiServiceRef.fetchList().subscribe((x)=>{
      console.log(x);
    })
    // alert("fetch")
