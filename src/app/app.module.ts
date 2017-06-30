@@ -4,7 +4,7 @@ import {FormsModule}   from '@angular/forms';
 import {AppComponent} from './app.component';
 import {AppDirective} from './app.directive';
 import {ApiService} from './api.service';
-import {HttpModule} from '@angular/http';
+import {HttpModule, JsonpModule} from '@angular/http';
 
 
 @NgModule({
@@ -13,9 +13,10 @@ import {HttpModule} from '@angular/http';
     AppDirective
   ],
   imports: [
-    HttpModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    JsonpModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

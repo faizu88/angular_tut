@@ -11,14 +11,12 @@
     <hr>
   </div>
 
-
   <div>
     <h3><i>Two Way Binding</i></h3>
     <input type="text" [(ngModel)]="property"><br>
     Result >> {{property}}
     <hr>
   </div>
-
 
   <div>
     <h3><i>List Repeater + Style Props </i></h3>
@@ -31,7 +29,6 @@
     <hr>
   </div>
 
-
   <div>
     <h3><i>Structural Directive [*ngIf (then,else), ngSwitch,..]</i></h3>
     <div *ngIf="showMainContent;then availTemplate else unavailTemplate"></div>
@@ -39,7 +36,6 @@
     <ng-template #unavailTemplate>Content Unavailable Template</ng-template>
     <br><br>
     <button (click)="showMainContent=!showMainContent">NgIf Toggler</button>
-
     <div [ngSwitch]="switchCaseVal.active">
       <p *ngSwitchCase="'red'">ngSwitch - Red - Active</p>
       <p *ngSwitchCase="'green'">ngSwitch - Green - Active</p>
@@ -52,19 +48,14 @@
     <hr>
   </div>
 
-
   <div>
-
     <h3><i>@HostListener [Passing Component Method into Attribute Directive] => Console</i></h3>
     <button [appDirective]="passComponentClickHandler">Component <-> Attribute Directive</button>
-
     <h3><i>@HostBinding [Default Attribute Setup - 'cust_bool_prop' (true/false)] => Inspect</i></h3>
     <button [appDirective]="passComponentClickHandler">Attribute Bool Toggler</button>
     <hr>
-
     <h3><i>Binding Second Property [Static] => Console</i></h3>
     <button [appDirective]="passComponentClickHandler" secondProperty="__static_value__">Static Content</button>
-
     <h3><i>Binding Second Property [Dynamic] => Console</i></h3>
     <p *ngFor="let list of listArray">
       <button [appDirective]="passComponentClickHandler" [secondProperty]="list">
@@ -72,17 +63,27 @@
       </button>
     </p>
     <hr>
-
     <h3><i>Directive Host Events [Invoking Directive's Own Method] => Console</i></h3>
     <h5>Note: Comment out - /* @HostListener Fn*/ - then workon</h5>
     <button appDirective>Directive Host Events</button>
     <hr>
   </div>
 
-
   <div>
-    <h3><i>HTTP Service (XHR/JSONP)</i></h3>
+    <h3><i>HTTP Service (XHR)</i></h3>
+    <input type="radio" value="error" id="error" name="status" [(ngModel)]="fetchListType">
+    <label for="error">Error</label>
+    <input type="radio" value="success" id="success" name="status" [(ngModel)]="fetchListType">
+    <label for="success">Success</label>
     <button (click)="fetchListBtnOnClick();">Fetch List</button>
+    <p class="success" *ngFor="let list of fetchListResult;trackBy:trackByListResult">{{list.Country}}</p>
+    <p class="error">{{fetchListError}}</p>
+    <h3><i>HTTP Service (JSONP) => Console</i></h3>
+    <h5>(No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is therefore not allowed access.)</h5>
+    <button (click)="fetchWithoutJsonp();">Without JSONP (wiki url)</button>
+    <button (click)="fetchWithJsonp();">With JSONP (wiki url)</button>
+    <p class="success" *ngFor="let list of fetchWikiResult;">{{list}}</p>
+    <p class="error">{{fetchWikiError}}</p>
     <hr>
   </div>
 
