@@ -4,7 +4,20 @@
     {{title}}!!
   </h1>
 
+
   <div>
+    <h3><i>Routing</i></h3>
+
+    <nav>
+      <a routerLink="/link1" routerLinkActive="active">Crisis Center</a>
+      <a routerLink="/link1" routerLinkActive="active">Heroes</a>
+    </nav>
+    <hr>
+  </div>
+
+
+
+  <!--<div>
     <h3><i>Property Binding [Unsafe URL Bypass Dom Sanitizer - Browser Module]</i></h3>
     <img width="50%" height="25px" [src]="imageSrc"/>
     <img width="50%" height="25px" bind-src="imageSrc"/>
@@ -85,7 +98,7 @@
     <p class="success" *ngFor="let list of fetchWikiResult;">{{list}}</p>
     <p class="error">{{fetchWikiError}}</p>
     <hr>
-  </div>
+  </div>-->
 
 </div>
 

@@ -5,18 +5,28 @@ import {AppComponent} from './app.component';
 import {AppDirective} from './app.directive';
 import {ApiService} from './api.service';
 import {HttpModule, JsonpModule} from '@angular/http';
+import {Routes, RouterModule} from "@angular/router";
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
+
+const mainRoutes: Routes = [
+  /*{path: 'link1', component: AppComponent},
+  {path: '**', component: PageNotFoundComponent}*/
+]
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppDirective
+    AppDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    RouterModule.forRoot(mainRoutes)
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
