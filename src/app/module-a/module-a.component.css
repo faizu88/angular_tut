@@ -1,0 +1,10 @@
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+.a-container{
+  border-style: solid;
+  border-color: #ffa8c2;
+}

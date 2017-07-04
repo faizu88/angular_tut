@@ -1,3 +1,23 @@
-<p>
-  Module-B Active
-</p>
+<div class="b-container">
+  <p>
+    Module-B View Active
+  </p>
+
+  <div>
+    <h3><i>Property Binding [Unsafe URL Bypass Dom Sanitizer - Browser Module]</i></h3>
+    <img width="50%" height="25px" [src]="imageSrc"/>
+    <img width="50%" height="25px" bind-src="imageSrc"/>
+  </div>
+
+  <div>
+    <h3><i>Two Way Binding</i></h3>
+    <input type="text" [(ngModel)]="property"><br>
+    Result >> {{property}}
+  </div>
+
+  <button (click)="changeRouteIdToken()">Change Route Token ID</button>
+
+
+
+
+</div>

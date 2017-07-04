@@ -69,7 +69,7 @@
     <hr>
   </div>
 
-  <div>
+  <!--<div>
     <h3><i>HTTP Service (XHR)</i></h3>
     <input type="radio" value="error" id="error" name="status" [(ngModel)]="fetchListType">
     <label for="error">Error</label>
@@ -86,14 +86,15 @@
     <p class="success" *ngFor="let list of fetchWikiResult;">{{list}}</p>
     <p class="error">{{fetchWikiError}}</p>
     <hr>
-  </div>
+  </div>-->
 
   <div>
     <h3><i>Routing & Navigation</i></h3>
     <nav>
       <a routerLink="/module-a" routerLinkActive="active">Module A</a>
-      <a routerLink="/module-b" routerLinkActive="active">Module B</a>
+      <a routerLink="/module-b/10" routerLinkActive="active">Module B</a>
     </nav>
+    <br>
     <router-outlet></router-outlet>
     <hr>
   </div>

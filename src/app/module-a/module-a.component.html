@@ -1,3 +1,23 @@
-<p>
-  Module-A Active
-</p>
+<div class="a-container">
+  <p>
+    Module-A View Active
+  </p>
+
+  <div>
+    <h3><i>HTTP Service (XHR)</i></h3>
+    <input type="radio" value="error" id="error" name="status" [(ngModel)]="fetchListType">
+    <label for="error">Error</label>
+    <input type="radio" value="success" id="success" name="status" [(ngModel)]="fetchListType">
+    <label for="success">Success</label>
+    <button (click)="fetchListBtnOnClick();">Fetch List</button>
+    <p class="success" *ngFor="let list of fetchListResult;trackBy:trackByListResult">{{list.Country}}</p>
+    <p class="error">{{fetchListError}}</p>
+    <h3><i>HTTP Service (JSONP) => Console</i></h3>
+    <h5>(No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is
+      therefore not allowed access.)</h5>
+    <button (click)="fetchWithoutJsonp();">Without JSONP (wiki url)</button>
+    <button (click)="fetchWithJsonp();">With JSONP (wiki url)</button>
+    <p class="success" *ngFor="let list of fetchWikiResult;">{{list}}</p>
+    <p class="error">{{fetchWikiError}}</p>
+  </div>
+</div>
