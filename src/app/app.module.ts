@@ -7,11 +7,14 @@ import {ApiService} from './api.service';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {Routes, RouterModule} from "@angular/router";
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { ModuleAComponent } from './module-a/module-a.component';
+import { ModuleBComponent } from './module-b/module-b.component';
 
 
 const mainRoutes: Routes = [
-  /*{path: 'link1', component: AppComponent},
-  {path: '**', component: PageNotFoundComponent}*/
+  {path: 'module-a', component: ModuleAComponent},
+  {path: 'module-b', component: ModuleBComponent},
+  {path: '**', component: PageNotFoundComponent}
 ]
 
 
@@ -19,7 +22,9 @@ const mainRoutes: Routes = [
   declarations: [
     AppComponent,
     AppDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ModuleAComponent,
+    ModuleBComponent
   ],
   imports: [
     BrowserModule,

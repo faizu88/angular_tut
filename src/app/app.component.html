@@ -4,20 +4,7 @@
     {{title}}!!
   </h1>
 
-
   <div>
-    <h3><i>Routing</i></h3>
-
-    <nav>
-      <a routerLink="/link1" routerLinkActive="active">Crisis Center</a>
-      <a routerLink="/link1" routerLinkActive="active">Heroes</a>
-    </nav>
-    <hr>
-  </div>
-
-
-
-  <!--<div>
     <h3><i>Property Binding [Unsafe URL Bypass Dom Sanitizer - Browser Module]</i></h3>
     <img width="50%" height="25px" [src]="imageSrc"/>
     <img width="50%" height="25px" bind-src="imageSrc"/>
@@ -92,13 +79,25 @@
     <p class="success" *ngFor="let list of fetchListResult;trackBy:trackByListResult">{{list.Country}}</p>
     <p class="error">{{fetchListError}}</p>
     <h3><i>HTTP Service (JSONP) => Console</i></h3>
-    <h5>(No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is therefore not allowed access.)</h5>
+    <h5>(No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is
+      therefore not allowed access.)</h5>
     <button (click)="fetchWithoutJsonp();">Without JSONP (wiki url)</button>
     <button (click)="fetchWithJsonp();">With JSONP (wiki url)</button>
     <p class="success" *ngFor="let list of fetchWikiResult;">{{list}}</p>
     <p class="error">{{fetchWikiError}}</p>
     <hr>
-  </div>-->
+  </div>
+
+  <div>
+    <h3><i>Routing & Navigation</i></h3>
+    <nav>
+      <a routerLink="/module-a" routerLinkActive="active">Module A</a>
+      <a routerLink="/module-b" routerLinkActive="active">Module B</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <hr>
+  </div>
+
 
 </div>
 

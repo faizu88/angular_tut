@@ -4,3 +4,7 @@
 .success {
   color: green;
 }
+
+a:active {
+  background-color: yellow;
+}
