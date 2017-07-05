@@ -61,8 +61,6 @@ export class ModuleAComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
   }
-
 }

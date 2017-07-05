@@ -32,7 +32,7 @@ export class ModuleBComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    alert("Module B Initiated");
+   // alert("Module B Initiated");
   }
 
   ngOnDestroy() {

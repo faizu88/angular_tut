@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {FormsModule}   from '@angular/forms';
 import {ModuleARoutingModule} from './module-a-routing.module';
 import {ModuleAComponent} from './module-a.component';
@@ -15,5 +15,4 @@ import {ModuleAComponent} from './module-a.component';
   ]
 })
 
-export class ModuleAModule {
-}
+export class ModuleAModule {}
