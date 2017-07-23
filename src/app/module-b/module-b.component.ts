@@ -8,6 +8,7 @@ import {Router, ActivatedRoute} from '@angular/router';
   styleUrls: ['./module-b.component.css']
 })
 export class ModuleBComponent implements OnInit, OnDestroy {
+  public property: any;
 
   constructor(private sanitizer: DomSanitizer,
               private routerRef: Router,
@@ -24,15 +25,15 @@ export class ModuleBComponent implements OnInit, OnDestroy {
   changeRouteIdToken() {
     let dynValue = Math.floor((Math.random() * 10) + 1);
     this.routerRef.navigate(['/module-b', dynValue]);
-  /*  this.routeObservableRef ? this.routeObservableRef.unsubscribe() : "";
-    this.routeObservableRef = this.activatedRouteRef.paramMap.subscribe((cbArgs) => {
-      console.log(cbArgs.get('slug'), "check this ");
-    })*/
+    /*  this.routeObservableRef ? this.routeObservableRef.unsubscribe() : "";
+     this.routeObservableRef = this.activatedRouteRef.paramMap.subscribe((cbArgs) => {
+     console.log(cbArgs.get('slug'), "check this ");
+     })*/
   }
 
 
   ngOnInit() {
-   // alert("Module B Initiated");
+    // alert("Module B Initiated");
   }
 
   ngOnDestroy() {

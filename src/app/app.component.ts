@@ -9,6 +9,9 @@ import {ApiService} from './api.service';
 })
 
 export class AppComponent {
+  public property: any;
+  public inputValue: any;
+
   constructor(private sanitizer: DomSanitizer,
               private apiServiceRef: ApiService) {
   }
@@ -41,9 +44,8 @@ export class AppComponent {
   passComponentClickHandler() {
     console.log(`Component Fn Init.`);
   }
+
   passComponentAttrList = this.listArray;
-
-
 
 
 }
