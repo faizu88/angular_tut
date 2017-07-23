@@ -11,8 +11,10 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AppDirective} from './app.directive';
 import {ApiService} from './api.service';
 
+
 const mainRoutes: Routes = [
   {path: 'module-b', loadChildren: 'app/module-b/module-b.module#ModuleBModule'},
+  {path: 'module-c', loadChildren: 'app/module-c/module-c.module#ModuleCModule'},
   {path: '', redirectTo: '/module-a', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -23,8 +25,7 @@ const mainRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    ModuleAModule,
-    RouterModule.forRoot(mainRoutes, {useHash: true})
+    ModuleAModule, RouterModule.forRoot(mainRoutes, {useHash: true})
   ],
   declarations: [
     AppComponent,

@@ -1,0 +1,5 @@
+.router-outlet-without-name {
+  border-style: solid;
+  border-color: #ff5f19;
+  background-color: rgba(255, 95, 25, 0.34);
+}

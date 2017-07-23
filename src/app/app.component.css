@@ -3,9 +3,13 @@ a:active {
 }
 .module-a-active{
   border-style: solid;
-  border-color: #ffa8c2;
+  border-color: #ff6e89;
 }
 .module-b-active{
   border-style: solid;
-  border-color: #a2ffb8;
+  border-color: #0c46ff;
+}
+.module-c-active{
+  border-style: solid;
+  border-color: #1eff16;
 }

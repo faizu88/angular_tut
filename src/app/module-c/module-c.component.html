@@ -1,0 +1,21 @@
+<div class="c-container">
+  Module C View Area [Children Routing]
+  <br> <br>
+  <a routerLink="./module-c-sub-a" routerLinkActive="module-c-sub-a-active">
+    Module C - Sub A [Router Outlet [Without Name]
+  </a> <br> <br>
+  <a [routerLink]="['/module-c/module-c-sub', {outlets: {'module-c-router-b': ['module-c-sub-b']}}]"
+     routerLinkActive="module-c-sub-b-active">
+    Module C - Sub B [Router Outlet [With Name]]
+  </a> <br> <br>
+
+  <!-- [Router Outlet [Without Name] -->
+  <router-outlet></router-outlet>
+  <br>
+  <!-- [Router Outlet [With Name] -->
+  <router-outlet name="module-c-router-b"></router-outlet>
+  <br>
+</div>
+
+
+
