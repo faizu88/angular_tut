@@ -58,13 +58,12 @@ export class AppComponent implements OnInit {
   public observableTimerProgress:number;
 
   unSubscribe(){
-    this.subjectSubscription.next(true);
+    this.subjectSubscription.next();
     this.subjectSubscription.unsubscribe();
   }
 
   ngOnInit() {
     Observable.interval(2000).takeUntil(this.subjectSubscription).subscribe((rData) => {
-        console.log(rData,"<<<<<<<<<");
         this.observableTimerProgress = rData;
     });
   }
