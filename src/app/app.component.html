@@ -94,10 +94,16 @@
       <a routerLink="/module-a" routerLinkActive="module-a-active">Module A</a><br>
       <a routerLink="/module-b/10"  routerLinkActive="module-b-active">Module B [Lazy Loaded => Console]</a><br>
       <a routerLink="/module-c"  routerLinkActive="module-c-active">Module C [Lazy Loaded => Console]</a>
-
     </nav>
     <br>
     <router-outlet></router-outlet>
+    <hr>
+  </div>
+
+  <div>
+    <h3><i>Rxjs [TakeUntil] Subscription [Can call the same in ngOnDestroy]</i></h3>
+   Timer >> {{observableTimerProgress}}
+   <button (click)="unSubscribe()">UnSubscribe</button>
     <hr>
   </div>
 
